@@ -19,6 +19,13 @@ struct ContentView: View {
         VStack {
             Button("Request Permission") {
                 // first
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        print("All set!")
+                    } else if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
             } //: BUTTON
             
             Button("Schedule Notification") {
