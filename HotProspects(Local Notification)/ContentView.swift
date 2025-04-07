@@ -41,8 +41,7 @@ struct ContentView: View {
                 
                 UNUserNotificationCenter.current().add(request)
             } //: BUTTON
-        }
-        .padding()
+        } //: VSTACK
     }
 }
 
